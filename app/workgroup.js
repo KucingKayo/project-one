@@ -22,7 +22,7 @@ function reset_form() {
               } else {
                 alert(data.msg);
               }
-              location.reload();
+              load_data()
             }, 'json')
           } else {
             if (status === 0) {
@@ -113,7 +113,7 @@ function reset_form() {
       $.post('workgroup/update_table', { id: id,  workgroupName: workgroupName, }, function (data) {
         if (data.status === 'success') {
           alert(data.msg);
-          location.reload();
+          load_data()
         } else {
           alert(data.msg);
   
@@ -182,7 +182,7 @@ function reset_form() {
             } else {
               // alert(data.msg);
             }
-            location.reload();
+            load_data()
           }, 'json')
         },
         batal: function () {
