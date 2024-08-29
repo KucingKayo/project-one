@@ -51,25 +51,15 @@ function reset_form() {
   };
   
   function simpan_data() {
-    let code = $("#txkode").val();
+
     let name = $("#txnama").val();
-    let email = $("#txemail").val();
-    let telp = $("#txtelp").val();
-    let region = $("#txnegara").val();
-    let city = $("#txkota").val();
-    let address = $("#txalamat").val();
   
-    if (code === "" || name === "" || email === "" || telp === "" || region === "" || city === "" || address === "") {
+    if ( name === "") {
       alert("Pastikan form diisi dengan benar!");
     } else {
       $.post("workgroup/create", {
-        txkode: code,
         txnama: name,
-        txemail: email,
-        txtelp: telp,
-        txnegara: region,
-        txkota: city,
-        txalamat: address
+ 
       },
         function (data) {
           console.log(data.status);
@@ -77,7 +67,8 @@ function reset_form() {
             alert(data.msg)
           } else {
             alert(data.msg)
-            location.reload();
+            $("#loginModal").modal('hide');
+            load_data()
             reset_form(); // Reset the form after successful save
           }
         }, 'json');

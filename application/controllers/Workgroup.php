@@ -43,7 +43,7 @@ class Workgroup extends CI_Controller
 
             $nama = $this->input->post('txnama');
 
-            $query = $this->db->query("SELECT COUNT(*) as count FROM workgroup WHERE workgroupName = '{$nama}''");
+            $query = $this->db->query("SELECT COUNT(*) as count FROM workgroup WHERE workgroupName = '{$nama}'");
             $result = $query->row();
 
             if ($result->count > 0) {
