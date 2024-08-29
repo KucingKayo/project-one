@@ -85,8 +85,9 @@ function reset_form() {
         $(".btn-editen").show();
   
       } else {
-        $("#loginModal").hide();
         alert(data.msg);
+        $("#loginModal").modal('hide');
+        load_data()
       }
     }, 'json');
   }
