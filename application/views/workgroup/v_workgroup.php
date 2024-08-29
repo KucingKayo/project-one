@@ -20,7 +20,7 @@
                             <div class="col-md-12 col-12">
                                 <div class="form-group">
                                     <label for="last-name-column">Nama</label>
-                                    <input type="text" id="txnama" class="form-control" placeholder="Richardo"
+                                    <input type="text" id="txnama" class="form-control"
                                         name="lname-column">
                                 </div>
                             </div>

@@ -1,11 +1,6 @@
 function reset_form() {
-    $("#txkode").val('').focus();
-    $("#txnama").val('');
-    $("#txemail").val('');
-    $("#txtelp").val('');
-    $("#txnegara").val('');
-    $("#txkota").val('');
-    $("#txalamat").val('');
+    $("#txnama").val('').focus();
+
   }
   
   function active_data(id, status) {
@@ -136,6 +131,7 @@ function reset_form() {
       },
       function (data) {
         console.log(data)
+        $("#table3").DataTable().clear().destroy()
   
         $("#table3 > tbody").html('');
         $.each(data.workgroup, function (idx, val) {
@@ -147,7 +143,7 @@ function reset_form() {
           html += '</tr>'
           $("#table3 > tbody").append(html);
         });
-        $("#table3").DataTable().destroy()
+        
         $("#table3").DataTable({
           responsive: true,
           processing: true,
