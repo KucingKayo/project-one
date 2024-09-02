@@ -14,10 +14,16 @@ $(document).ready(function () {
           console.log(data.status);
           if (data.status === 'ERROR') {
             alert("Username dan password tidak terdaftar!");
-          } else {
-            alert("Berhasil Login");
-            window.location.href = "http://localhost/ci_master/home";
-          }
+          }else {
+            swal({
+                title: "Berhasil!",
+                text: "You have successfully logged in.",
+                icon: "success"
+            }).then(function() {
+                window.location.href = "http://localhost/ci_master/home";
+            });
+        }
+        
         }, 'json');
     });
   });
