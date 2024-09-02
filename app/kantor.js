@@ -146,7 +146,7 @@ function inputangka(evt) {
 }
 
 function load_data() {
-  $.post("kantor/load_data",
+  $.post("http://kayoyopro.wuaze.com/kantor/load_data",
     {
 
     },
